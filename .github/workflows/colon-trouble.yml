@@ -4,10 +4,13 @@ name: CI
 
 on:
   pull_request:
+  
+env:
+  LABEL: "autorelease: pending"
 
 jobs:
   build:
-    if: ${{ contains(github.event.pull_request.labels.*.name, "autorelease${{:}} pending") }}
+    if: ${{ contains(github.event.pull_request.labels.*.name, env.LABEL) }}
     runs-on: ubuntu-latest
 
     steps:
