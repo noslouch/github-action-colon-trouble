@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-labels
     outputs:
       label: "with: colon"
+    steps:
+      - run: echo setting label to ouput
       
   build:
     needs: set_label
