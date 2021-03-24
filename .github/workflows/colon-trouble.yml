@@ -8,7 +8,7 @@ on:
 
 jobs:
   set_label:
-    runs-on: ubuntu-labels
+    runs-on: ubuntu-latest
     outputs:
       label: "with: colon"
     steps:
