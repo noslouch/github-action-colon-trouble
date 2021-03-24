@@ -1,0 +1,14 @@
+# Just a basic workflow to demonstrate an issue with parsing colons
+
+name: CI
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    if: ${{ contains(github.event.pull_request.labels.*.name, "autorelease: pending") }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo hello world
